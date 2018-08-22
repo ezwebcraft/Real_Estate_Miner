@@ -1,13 +1,9 @@
-### REAL Estate Miner
 
 
-topic
+def main():
+    pass
 
-- generator xpression
-- str magic method
-- repr magic method
-- string parsing
-- list compehension
-- csv file format
-- coding for python and python3
-- data pipelines with generators
+
+
+if __name__ == '__main__':
+    main()
