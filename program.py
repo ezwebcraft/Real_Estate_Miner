@@ -6,7 +6,7 @@ def main():
     filename = get_data_file()
     # print(filename)
     data = load_file(filename)
-    print(data)
+    query_data(data)
 
 
 def print_header():
@@ -23,6 +23,10 @@ def get_data_file():
 
 def load_file(filename):
     return []
+
+
+def query_data(data):
+    pass
 
 
 if __name__ == '__main__':
