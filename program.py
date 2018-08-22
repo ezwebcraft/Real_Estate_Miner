@@ -24,12 +24,13 @@ def get_data_file():
 def load_file(filename):
     # return []
     with open(filename, 'r', encoding='utf-8') as fin:
-        header = fin.readline()
+        header = fin.readline().strip()
         print('found header: ' + header)
 
         lines = []
         for line in fin:
-            line_data = line.split(',')
+            line_data = line.strip().split(',')
+            bed_count = line_data[4]
             lines.append(line_data)
 
         print(lines[:5])
