@@ -22,7 +22,17 @@ def get_data_file():
 
 
 def load_file(filename):
-    return []
+    # return []
+    with open(filename, 'r', encoding='utf-8') as fin:
+        header = fin.readline()
+        print('found header: ' + header)
+
+        lines = []
+        for line in fin:
+            line_data = line.split(',')
+            lines.append(line_data)
+
+        print(lines[:5])
 
 
 def query_data(data):
