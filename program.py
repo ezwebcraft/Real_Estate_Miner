@@ -25,9 +25,9 @@ def load_file(filename):
     # return []
     with open(filename, 'r', encoding='utf-8') as fin:
         header = fin.readline().strip()
-        reader = csv.reader(fin)
+        reader = csv.reader(fin, delimiter=',')
         for row in reader:
-            print(row)
+            print(type(row),row)
 
 
 
