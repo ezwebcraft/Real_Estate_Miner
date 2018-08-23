@@ -1,5 +1,5 @@
 import os
-
+import csv
 
 def main():
     print_header()
@@ -25,16 +25,24 @@ def load_file(filename):
     # return []
     with open(filename, 'r', encoding='utf-8') as fin:
         header = fin.readline().strip()
-        print('found header: ' + header)
+        reader = csv.reader(fin)
+        for row in reader:
+            print(row)
 
-        lines = []
-        for line in fin:
-            line_data = line.strip().split(',')
-            bed_count = line_data[4]
-            lines.append(line_data)
 
-        print(lines[:5])
 
+
+        #header = fin.readline().strip()
+        #print('found header: ' + header)
+#
+        #lines = []
+        #for line in fin:
+            #line_data = line.strip().split(',')
+            #bed_count = line_data[4]
+            #lines.append(line_data)
+#
+        #print(lines[:5])
+#
 
 def query_data(data):
     pass
