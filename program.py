@@ -28,26 +28,21 @@ def load_file(filename):
         for row in reader:
             #print(type(row),row)
             print("Bed count: {}".format(row['beds']))
-#
+
         #header = fin.readline().strip()
         #reader = csv.reader(fin, delimiter=',')
         #for row in reader:
             #print(type(row),row)
-#
-
 
 
         #header = fin.readline().strip()
         #print('found header: ' + header)
-#
         #lines = []
         #for line in fin:
             #line_data = line.strip().split(',')
             #bed_count = line_data[4]
             #lines.append(line_data)
-#
         #print(lines[:5])
-#
 
 def query_data(data):
     pass
