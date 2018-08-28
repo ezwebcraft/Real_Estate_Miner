@@ -27,7 +27,7 @@ def load_file(filename):
         reader = csv.DictReader(fin)
         for row in reader:
             #print(type(row),row)
-            print("Bed count: {}".format(row['beds']))
+            print("Bed count: {}, type: {}".format(row['beds'], type(row['beds'])))
 
         #header = fin.readline().strip()
         #reader = csv.reader(fin, delimiter=',')
