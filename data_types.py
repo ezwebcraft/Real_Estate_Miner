@@ -1,11 +1,8 @@
 
 class Purchase:
-    def __init__(self,street,city,zipcode,state,
-                 beds,baths,sq__ft,home_type,
-                 sale_date,price,latitude,
-                 longitude)
-
-
+    def __init__(self, street, city, zipcode, state,
+                 beds, baths, sq__ft, home_type,
+                 sale_date, price, latitude, longitude)
 
         self.street = street
         self.city = city
@@ -19,3 +16,18 @@ class Purchase:
         self.price = price
         self.latitude = latitude
         self.longitude = longitude
+
+    def create_from_dict(self, lookup):
+        return Purchase(
+        lookup[street],
+        lookup[city],
+        lookup[zipcode],
+        lookup[state],
+        int(lookup[beds]),
+        int(lookup[baths]),
+        int(lookup[sq__ft]),
+        lookup[home_type],
+        lookup[sale_date],
+        float(lookup[price])),
+        float(lookup[latitude]),
+        float(lookup[longitude]))
