@@ -1,5 +1,7 @@
 import os
 import csv
+from data_types import Purchase
+
 
 def main():
     print_header()
@@ -25,16 +27,19 @@ def load_file(filename):
     # return []
     with open(filename, 'r', encoding='utf-8') as fin:
         reader = csv.DictReader(fin)
+        purchases = []
         for row in reader:
             #print(type(row),row)
-            print("Bed count: {}, type: {}".format(row['beds'], type(row['beds'])))
+            #print("Bed count: {}, type: {}".format(row['beds'], type(row['beds'])))
+            p = Purchase.create_from_dict(row)
+            purchases.append(p)
 
         #header = fin.readline().strip()
         #reader = csv.reader(fin, delimiter=',')
         #for row in reader:
             #print(type(row),row)
 
-
+        print(purchases[0].__dict__)
         #header = fin.readline().strip()
         #print('found header: ' + header)
         #lines = []
