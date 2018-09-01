@@ -29,31 +29,46 @@ def load_file(filename):
         reader = csv.DictReader(fin)
         purchases = []
         for row in reader:
-            #print(type(row),row)
-            #print("Bed count: {}, type: {}".format(row['beds'], type(row['beds'])))
+            # print(type(row),row)
+            # print("Bed count: {}, type: {}".format(row['beds'], type(row['beds'])))
             p = Purchase.create_from_dict(row)
             purchases.append(p)
 
-        #header = fin.readline().strip()
-        #reader = csv.reader(fin, delimiter=',')
-        #for row in reader:
-            #print(type(row),row)
+        # header = fin.readline().strip()
+        # reader = csv.reader(fin, delimiter=',')
+        # for row in reader:
+        # print(type(row),row)
 
         print(purchases[0].__dict__)
-        #header = fin.readline().strip()
-        #print('found header: ' + header)
-        #lines = []
-        #for line in fin:
-            #line_data = line.strip().split(',')
-            #bed_count = line_data[4]
-            #lines.append(line_data)
-        #print(lines[:5])
+        # header = fin.readline().strip()
+        # print('found header: ' + header)
+        # lines = []
+        # for line in fin:
+        # line_data = line.strip().split(',')
+        # bed_count = line_data[4]
+        # lines.append(line_data)
+        # print(lines[:5])
 
-def query_data(data):
+
+def get_price(p):
+    return p.price
+
+
+def query_data(data):  #: list[Purchase]):
+    # if data was sorted by price
+    data.sort(key=get_price)
+
     # Most expensive house?
+    high_purchase = data[-1]
+    print(high_purchase.price)
+
     # least expensive house?
+    low_purchase = data[0]
+    print(low_purchase.price)
+
     # average price house?
     # average price of 2 bedroom houses
+
     pass
 
 
