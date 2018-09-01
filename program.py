@@ -50,6 +50,10 @@ def load_file(filename):
         #print(lines[:5])
 
 def query_data(data):
+    # Most expensive house?
+    # least expensive house?
+    # average price house?
+    # average price of 2 bedroom houses
     pass
 
 
