@@ -80,8 +80,15 @@ def query_data(data):  #: list[Purchase]):
     print("The average home prices is {:,}".format(int(avg_price)))
 
     # average price of 2 bedroom houses
+    prices = []
 
-    pass
+    for pur in data:
+        if pur.beds == 2:
+            prices.append(pur.price)
+
+    avg_price = statistics.mean(prices)
+
+    print("The average home prices for 2-bedrooms is {:,}".format(int(avg_price)))
 
 
 if __name__ == '__main__':
