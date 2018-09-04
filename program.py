@@ -38,8 +38,8 @@ def load_file(filename):
         # reader = csv.reader(fin, delimiter=',')
         # for row in reader:
         # print(type(row),row)
-
-        print(purchases[0].__dict__)
+        return purchases
+        #print(purchases[0].__dict__)
         # header = fin.readline().strip()
         # print('found header: ' + header)
         # lines = []
@@ -56,7 +56,7 @@ def get_price(p):
 
 def query_data(data):  #: list[Purchase]):
     # if data was sorted by price
-    data.sort(key=get_price)
+    data.sort(key= lambda p: p.price)
 
     # Most expensive house?
     high_purchase = data[-1]
