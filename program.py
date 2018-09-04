@@ -39,7 +39,7 @@ def load_file(filename):
         # for row in reader:
         # print(type(row),row)
         return purchases
-        #print(purchases[0].__dict__)
+        # print(purchases[0].__dict__)
         # header = fin.readline().strip()
         # print('found header: ' + header)
         # lines = []
@@ -56,15 +56,17 @@ def get_price(p):
 
 def query_data(data):  #: list[Purchase]):
     # if data was sorted by price
-    data.sort(key= lambda p: p.price)
+    data.sort(key=lambda p: p.price)
 
     # Most expensive house?
     high_purchase = data[-1]
-    print(high_purchase.price)
+    print("Most expensive house is ${:,} with {} beds and {} bath room".format(high_purchase.price, high_purchase.beds,
+                                                                               high_purchase.baths))
 
     # least expensive house?
     low_purchase = data[0]
-    print(low_purchase.price)
+    print("Least expensive house is ${:,} with {} beds and {} bath room".format(low_purchase.price, low_purchase.beds,
+                                                                                low_purchase.baths))
 
     # average price house?
     # average price of 2 bedroom houses
