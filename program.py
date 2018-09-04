@@ -1,5 +1,6 @@
 import os
 import csv
+import statistics
 from data_types import Purchase
 
 
@@ -69,6 +70,15 @@ def query_data(data):  #: list[Purchase]):
                                                                                 low_purchase.baths))
 
     # average price house?
+    prices = []
+
+    for pur in data:
+        prices.append(pur.price)
+
+    avg_price = statistics.mean(prices)
+
+    print("The average home prices is {:,}".format(int(avg_price)))
+
     # average price of 2 bedroom houses
 
     pass
