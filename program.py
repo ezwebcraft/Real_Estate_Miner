@@ -1,8 +1,10 @@
 import os
 import csv
-import statistics
 from data_types import Purchase
-
+try:
+    import statistics
+except:
+    import statistics_py2
 
 def main():
     print_header()
