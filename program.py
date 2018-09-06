@@ -1,10 +1,14 @@
 import os
 import csv
 from data_types import Purchase
+
 try:
     import statistics
+
 except:
-    import statistics_py2
+
+    import statistics_py2 as statistics
+
 
 def main():
     print_header()
