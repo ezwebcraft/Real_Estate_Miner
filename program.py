@@ -99,14 +99,16 @@ def query_data(data):  #: list[Purchase]):
     #     if pur.beds == 2:
     #         prices.append(pur.price)
 
-    prices = [
-        p.price
+    two_bed_homes = [
+        p
         for p in data
         if p.beds == 2
     ]
-    avg_price = statistics.mean(prices)
+    avg_price = statistics.mean([p.prices for p in two_bed_homes])
+    avg_baths = statistics.mean([p.baths for p in two_bed_homes])
+    avg_sqft = statistics.mean([p.sq__ft for p in two_bed_homes])
 
-    print("The average home prices for 2-bedrooms is {:,}".format(int(avg_price)))
+    print("The average home prices for 2-bedrooms is {:,}, baths={}, sq ft={:,}".format(int(avg_price),avg_baths,avg_sqft))
 
 
 if __name__ == '__main__':
