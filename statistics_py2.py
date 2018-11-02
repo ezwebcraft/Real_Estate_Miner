@@ -1,5 +1,3 @@
-
-
 def mean(data):
 
     total = 0.0
